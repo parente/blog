@@ -6,6 +6,7 @@ import shutil
 
 from datetime import datetime
 from os.path import join
+from typing import NotRequired, TypedDict
 
 import mako.template
 import mako.lookup
@@ -32,9 +33,34 @@ TMPL_LOOKUP = mako.lookup.TemplateLookup(
 )
 
 
-def copyinto(src, dst, symlinks=False, ignore=None):
+class Page(TypedDict):
+    """A page on the site."""
+
+    # Brief introductory comment above at the start of a page
+    author_comment: NotRequired[str]
+    # YYYY-MM-DD date of the page
+    date: str
+    # A brief summary of the page
+    excerpt: str
+    # The rendered HTML of the page
+    html: NotRequired[str]
+    # The next page in chronological series of pages
+    next: "Page"
+    # Flag to skip rendering the page
+    skip: NotRequired[bool]
+    # The URL slug of the page
+    slug: str
+    # The path to the source document of the page
+    src: str
+    # The template to use to render the page
+    template: NotRequired[str]
+    # The title of the page
+    title: str
+
+
+def copyinto(src: str, dst: str, symlinks=False, ignore=None):
     """
-    Copy files and subdirectoryes from src into dst.
+    Copy files and subdirectories from src into dst.
 
     http://stackoverflow.com/questions/1868714/how-do-i-copy-an-entire-directory-of-files-into-an-existing-directory-using-pyth
     """
@@ -47,7 +73,7 @@ def copyinto(src, dst, symlinks=False, ignore=None):
             shutil.copy2(s, d)
 
 
-def save_rss(pages):
+def save_rss(pages: list[Page]):
     """Save a RSS document listing all of the pages."""
     rss_tmpl = TMPL_LOOKUP.get_template("rss.mako")
     xml = rss_tmpl.render(
@@ -61,7 +87,7 @@ def save_rss(pages):
         f.write(xml)
 
 
-def save_atom(pages):
+def save_atom(pages: list[Page]):
     """Save an Atom document listing of all of the pages."""
     atom_tmpl = TMPL_LOOKUP.get_template("atom.mako")
     xml = atom_tmpl.render(
@@ -76,7 +102,7 @@ def save_atom(pages):
         f.write(xml)
 
 
-def save_archive(pages):
+def save_archive(pages: list[Page]):
     """Save an HTML document listing all of the pages."""
     archive_tmpl = TMPL_LOOKUP.get_template("archive.mako")
     html = archive_tmpl.render(site_name=SITE_NAME, site_root="..", all_pages=pages)
@@ -85,7 +111,7 @@ def save_archive(pages):
         f.write(html)
 
 
-def save_latest(pages):
+def save_latest(pages: list[Page]):
     """Save the latest page as index.html."""
     page = pages[0]
     tmpl_name = page.get("template", "page.mako")
@@ -100,7 +126,7 @@ def save_latest(pages):
         f.write(html)
 
 
-def save_html(pages):
+def save_html(pages: list[Page]):
     """Save every page as an HTML document."""
     for page in pages:
         in_tree = page["src"]
@@ -117,11 +143,10 @@ def save_html(pages):
             f.write(html)
 
 
-def org_pages(pages):
+def org_pages(pages: list[Page]):
     """Sort pages from newest to oldest.
 
-    Use the `date` key for sorting. Add a `next` key to link one page to the
-    next.
+    Use the `date` key for sorting. Add a `next` key to link one page to the next.
     """
     for page in pages:
         if "date" in page:
@@ -135,23 +160,17 @@ def org_pages(pages):
 
 
 class MarkdownParser:
-    md = markdown.Markdown(
-        extensions=["meta", "fenced_code", "codehilite"], output_format="html"
-    )
+    def __init__(self):
+        self.md = markdown.Markdown(
+            extensions=["meta", "fenced_code", "codehilite"], output_format="html"
+        )
 
-    def execute(self, path, page):
-        """Parse an md file in the path and update the page with its
-        contents.
-
-        Use the page filename or fall back on index.md as the default.
-        Add metadata from the extended metadata section of the document to the
-        page along with the rendered HTML.
-        """
-        fn = join(path, page.get("filename", "index.md"))
-        if not os.path.isfile(fn) or not fn.endswith(".md"):
+    def execute(self, path: str, page: Page):
+        """Parse an md file in the path and update the page with its HTML rendered content and
+        metadata."""
+        fn = join(path, "index.md")
+        if not os.path.isfile(fn):
             return
-        else:
-            page.setdefault("filename", "index.md")
         with open(fn) as f:
             print("Processing", path, "as Markdown")
             text = f.read()
@@ -169,10 +188,9 @@ class MarkdownParser:
         page["slug"] = os.path.basename(path)
         page["html"] = html
 
-    def _build_excerpt(self, text):
-        """Build an excerpt from the first non-blank line after the first blank
-        line separating the metadata from the content of the doc.
-        """
+    def _build_excerpt(self, text: str):
+        """Build an excerpt from the first non-blank line after the first blank line separating the
+        metadata from the content of the doc."""
         lines = []
         prior = None
 
@@ -192,21 +210,18 @@ class MarkdownParser:
 def load_pages():
     """Parse data and metadata for all pages.
 
-    Iterate over the page directories. Pass the page source document and
-    in-memory page representation to all parsers. Raise a RuntimeError if
-    no parser emits HTML for the page.
+    Iterate over the page directories. Pass the page source document and in-memory page
+    representation to all parsers. Raise a RuntimeError if no parser emits HTML for the page.
     """
     pages = []
     handlers = [MarkdownParser()]
     for path in glob.glob(join(PAGES_DIR, "*")):
-        page = {}
+        page: Page = {}
         for handler in handlers:
             handler.execute(path, page)
         if "skip" in page:
             continue
         elif "html" not in page:
-            print("WARN: Nothing rendered HTML for", path)
-            continue
             raise RuntimeError("Nothing rendered HTML for " + path)
         pages.append(page)
     return pages
