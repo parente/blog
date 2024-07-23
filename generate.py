@@ -2,6 +2,7 @@
 """Renders my blog."""
 import glob
 import os
+import re
 import shutil
 
 from datetime import datetime
@@ -39,7 +40,7 @@ class Page(TypedDict):
     # Brief introductory comment above at the start of a page
     author_comment: NotRequired[str]
     # YYYY-MM-DD date of the page
-    date: str
+    date: NotRequired[str]
     # A brief summary of the page
     excerpt: str
     # The rendered HTML of the page
@@ -50,7 +51,7 @@ class Page(TypedDict):
     skip: NotRequired[bool]
     # The URL slug of the page
     slug: str
-    # The path to the source document of the page
+    # The path containing the source document of the page
     src: str
     # The template to use to render the page
     template: NotRequired[str]
@@ -130,7 +131,7 @@ def save_html(pages: list[Page]):
     """Save every page as an HTML document."""
     for page in pages:
         in_tree = page["src"]
-        out_tree = join(OUT_DIR, os.path.basename(in_tree))
+        out_tree = join(OUT_DIR, page["slug"])
         print("Saving", out_tree)
 
         tmpl_name = page.get("template", "page.mako")
@@ -185,8 +186,13 @@ class MarkdownParser:
         # if "author_comment" in page:
         #     page["author_comment"] = self.md.convert(page["author_comment"])
         page["src"] = path
-        page["slug"] = os.path.basename(path)
+        page["slug"] = self._build_page_slug(page)
         page["html"] = html
+
+    def _build_page_slug(self, page: Page):
+        """Build a slug for the page using the non-date portion of the subdirector."""
+        slug = os.path.basename(page["src"])
+        return m.group(1) if (m := re.match(r"\d{8}-(.*)", slug)) is not None else slug
 
     def _build_excerpt(self, text: str):
         """Build an excerpt from the first non-blank line after the first blank line separating the
