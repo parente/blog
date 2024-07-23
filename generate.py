@@ -16,7 +16,7 @@ import markdown
 SITE_AUTHOR = os.environ.get("SITE_AUTHOR", "Peter Parente")
 SITE_NAME = os.environ.get("SITE_NAME", "parente.dev")
 SITE_ROOT = os.environ.get("SITE_ROOT", "")
-SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "parente.dev")
+SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "blog.parente.dev")
 
 # Constants
 STATIC_DIR = "static"

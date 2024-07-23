@@ -2,7 +2,7 @@
 
 GIT_VERSION := $(shell git describe --abbrev=4 --dirty --always --tags)
 
-export SITE_DOMAIN:=parente.dev
+export SITE_DOMAIN:=blog.parente.dev
 
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
@@ -20,17 +20,6 @@ env: ## Make the current python environment install the generator prereqs
 
 build: ## Make a local copy of the blog
 	python generate.py
-
-release: build ## Make a manual deployment of the blog
-	@cd _output && \
-		git init && \
-		git remote add upstream 'git@github.com:parente/blog.git' && \
-		git fetch --depth=1 upstream gh-pages && \
-		git reset upstream/gh-pages && \
-		echo "$(SITE_DOMAIN)" > CNAME && \
-		git add -A . && \
-		git commit -m "Release $(GIT_VERSION)" && \
-		git push upstream HEAD:gh-pages
 
 server: ## Make a local web server point to the latest local build
 	@open http://localhost:8000/_output && python -m http.server
