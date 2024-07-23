@@ -15,8 +15,11 @@ clean: ## Make a clean workspace
 	@rm -rf _output
 	@git clean -f .
 
-env: ## Make the current python environment install the generator prereqs
-	@pip install -r requirements.txt
+check: ## Make a ruff check of code lint
+	@ruff check generate.py
+
+env: ## Make the current python environment install all prereqs
+	@pip install -r requirements.txt -r requirements-dev.txt
 
 build: ## Make a local copy of the blog
 	python generate.py

@@ -36,6 +36,8 @@ jobs:
           python-version-file: ".python-version"
       - name: Install Python Dependencies
         run: make env
+      - name: Check Site Generator Code
+        run: make check
       - name: Build Static Site
         run: make build
       - name: Setup Pages
