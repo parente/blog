@@ -1,4 +1,5 @@
 _output/
+.obsidian/
 .venv/
 tmp/
 .DS_Store
