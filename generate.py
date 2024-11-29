@@ -37,7 +37,8 @@ TMPL_LOOKUP = mako.lookup.TemplateLookup(
 class Page(TypedDict):
     """A page on the site."""
 
-    # Brief introductory comment above at the start of a page
+    # Author of the page, if different from SITE_AUTHOR
+    author: NotRequired[str]
     # Brief introductory comment above the start of a page *in HTML*
     author_comment: NotRequired[str]
     # YYYY-MM-DD date of the page
@@ -182,6 +183,9 @@ class MarkdownParser:
             meta[key] = "".join(value)
         page.update(meta)
 
+        # Populate fields expected by the templates
+        if "author" not in page:
+            page["author"] = SITE_AUTHOR
         if "excerpt" not in page:
             page["excerpt"] = self._build_excerpt(text)
         page["src"] = path
