@@ -38,6 +38,7 @@ class Page(TypedDict):
     """A page on the site."""
 
     # Brief introductory comment above at the start of a page
+    # Brief introductory comment above the start of a page *in HTML*
     author_comment: NotRequired[str]
     # YYYY-MM-DD date of the page
     date: NotRequired[str]
@@ -183,8 +184,6 @@ class MarkdownParser:
 
         if "excerpt" not in page:
             page["excerpt"] = self._build_excerpt(text)
-        # if "author_comment" in page:
-        #     page["author_comment"] = self.md.convert(page["author_comment"])
         page["src"] = path
         page["slug"] = self._build_page_slug(page)
         page["html"] = html
