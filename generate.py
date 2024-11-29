@@ -165,12 +165,22 @@ def org_pages(pages: list[Page]):
 class MarkdownParser:
     def __init__(self):
         self.md = markdown.Markdown(
-            extensions=["meta", "fenced_code", "codehilite"], output_format="html"
+            extensions=[
+                "meta",
+                "fenced_code",
+                "codehilite",
+                "footnotes",
+                "sane_lists",
+            ],
+            output_format="html",
         )
 
     def execute(self, path: str, page: Page):
         """Parse an md file in the path and update the page with its HTML rendered content and
         metadata."""
+        # Don't leave conversion state across pages (e.g., footnotes)
+        self.md.reset()
+
         fn = join(path, "index.md")
         if not os.path.isfile(fn):
             return
