@@ -28,9 +28,9 @@ I installed the extension and created an initial template to store page highligh
 2. Click the Obsidian icon in the Firefox toolbar and then click the gear to open the settings screen.
 3. Add my primary vault named `Journal` to the _Vaults_ list.
 4. Create a _New Template_ named `Highlights Only` which saves to the `untriaged` folder in my `Journal` vault and has _Note content_ `{{highlights|map: item => item.text|join:"\n\n"}}` (i.e., the text of all my highlights separated by newlines).
-5. Update the _Properties_ in the template to align with ones I already use on my Obsidian notes (e.g., `url` instead of `source`, `clipped` instead of `created` with a ISO-8601 datetime).
+5. Update the _Properties_ in the template to align with ones I already use on my Obsidian notes (e.g., `url` instead of `source`, `clipped` instead of `created` with an ISO-8601 datetime).
 6. Delete the _Default_ template.
-7. Click _Properties_ in the sidebar and then _Remove unused properties_ so only the metadata I care about is listed.
+7. Click _Properties_ in the sidebar and then _Remove unused properties_ so only the metadata I care about are listed.
 
 At this point, I was able to open the extension, click the highlighter icon, select portions of the page, and save notes containing my manual highlights.
 
