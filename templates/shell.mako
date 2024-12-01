@@ -11,11 +11,11 @@
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${site_root}/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="${site_root}/feed/atom/index.xml" />
     <link rel="stylesheet" type="text/css" href="${site_root}/static/css/pygments.css" />
-    <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Dosis:300,600' type='text/css'>
-    <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Gentium+Basic' type='text/css'>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Dosis:300,600' type='text/css'>
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Gentium+Basic' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="${site_root}/static/css/site.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/0affbb0817.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -41,9 +41,9 @@
         <div class="col-md-4" id="contact">
           <h3>Contact</h3>
           <div>
-            <i class="fa fa-envelope-o fa-fw"></i> <a title="Email address" href="mailto:parente@gmail.com">parente@gmail.com</a><br/>
-            <i class="fa fa-github fa-fw"></i> <a title="GitHub account" href="https://github.com/parente">github.com/parente</a><br/>
-            <i class="fa fa-linkedin fa-fw"></i> <a title="LinkedIn account" href="https://linkedin.com/in/parente">linkedin.com/in/parente</a><br/>
+            <i class='fa-brands fa-bluesky fa-lg'></i></i> <a href="https://bsky.app/profile/parente.dev">bsky.app/profile/parente.dev</a><br/>
+            <i class="fa-brands fa-github fa-lg"></i> <a title="GitHub account" href="https://github.com/parente">github.com/parente</a><br/>
+            <i class="fa-brands fa-linkedin fa-lg"></i> <a title="LinkedIn account" href="https://linkedin.com/in/parente">linkedin.com/in/parente</a><br/>
           </div>
         </div>
 
