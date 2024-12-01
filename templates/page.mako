@@ -2,7 +2,7 @@
 <%inherit file="shell.mako"/>
 <%block name="header">
   <title>${page['title']} - ${site_name}</title>
-  <meta name="description" content="${page['excerpt']}" />
+  <meta name="description" content="${page['excerpt']|h}" />
   <meta name="author" content="${page['author']}" />
   % if 'date' in page:
     <meta property="article:published_time" content="${page['date']}" />

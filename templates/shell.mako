@@ -37,30 +37,24 @@
       <!-- Meta -->
       <%block name="pageMeta" />
 
-      <div class="row footerSection" id="siteMeta">
-        <div class="col-md-4" id="contact">
+      <div class="row footerSection gx-5" id="siteMeta">
+
+        <div class="col-md-3" id="social">
           <h3>Contact</h3>
           <div>
-            <i class='fa-brands fa-bluesky fa-lg'></i></i> <a href="https://bsky.app/profile/parente.dev">bsky.app/profile/parente.dev</a><br/>
-            <i class="fa-brands fa-github fa-lg"></i> <a title="GitHub account" href="https://github.com/parente">github.com/parente</a><br/>
-            <i class="fa-brands fa-linkedin fa-lg"></i> <a title="LinkedIn account" href="https://linkedin.com/in/parente">linkedin.com/in/parente</a><br/>
+            <i class="fa-brands fa-bluesky"></i></i> <a href="https://bsky.app/profile/parente.dev">Bluesky</a><br/>
+            <i class="fa-brands fa-github"></i> <a href="https://github.com/parente">GitHub</a><br/>
+            <i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/parente">LinkedIn</a><br/>
+            <i class="fa-solid fa-rss"></i> <a href="${site_root}/feed/index.xml">RSS</a><br/>
           </div>
         </div>
-
-        <div class="col-md-5" id="latest">
-          <h3>Latest</h3>
-          <ul>
-          % for recent in all_pages[:4]:
-            <li><a href="${site_root}/${recent['slug']}">${recent['title']}</a></li>
+        <div class="col-md-9" id="latest">
+          <h3>Latest Posts</h3>
+          <ul class="archiveList">
+          % for recent in all_pages[:3]:
+            <li><span class="date">${recent['date'].strftime('%Y-%m-%d')}</span> &mdash; <a href="${site_root}/${recent['slug']}">${recent['title']}</a></li>
           % endfor
-          </ul>
-        </div>
-
-        <div class="col-md-3" id="other">
-          <h3>More</h3>
-          <ul>
             <li><a href="${site_root}/posts/">See all posts &#187;</a></li>
-            <li><a href="${site_root}/feed/index.xml">Subscribe to posts &#187;</a></li>
           </ul>
         </div>
       </div>
