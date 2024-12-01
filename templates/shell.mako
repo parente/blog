@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="proof" content="proven.lol/ac4104">
     <%block name="header">
       <title>${site_name}</title>
     </%block>
