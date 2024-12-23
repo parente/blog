@@ -2,6 +2,7 @@
 date: 2024-11-29
 title: Create Obsidian Web Clip Summaries on MacOS with Firefox and Llama 3.2
 excerpt: I use Obsidian to capture all kinds of information. I set out to get the Obsidian web clipper Firefox extension configured on my Mac with a local Meta Llama 3.2 model to summarize content. This post explains the steps I took top-to-bottom.
+author_comment: I updated this post on December 23, 2024 to reflect the steps required in the version 0.10.5 of the Obsidian web clipper extension.
 ---
 
 I use [Obsidian](https://obsidian.md) to capture information like my daily todo lists; notes about things I've read, listened to, watched, or done; reminders about repeating chores and home maintenance tasks; trips I'm planning or places I've visited--anything and everything.
@@ -24,7 +25,8 @@ I started with the following:
 
 I installed the extension and created an initial template to store page highlights in Obsidian notes by following the steps below.
 
-1. Install the Obsidian web clipper extension from [the Firefox add-ons site](https://addons.mozilla.org/en-US/firefox/addon/web-clipper-obsidian/).
+1. Install the Obsidian web clipper extension from [the Firefox add-ons
+   site](https://addons.mozilla.org/en-US/firefox/addon/web-clipper-obsidian/).
 2. Click the Obsidian icon in the Firefox toolbar and then click the gear to open the settings screen.
 3. Add my primary vault named `Journal` to the _Vaults_ list.
 4. Create a _New Template_ named `Highlights Only` which saves to the `untriaged` folder in my `Journal` vault and has _Note content_ `{{highlights|map: item => item.text|join:"\n\n"}}` (i.e., the text of all my highlights separated by newlines).
@@ -63,13 +65,14 @@ PARAMETER temperature 0.25
 
 1. Click the Obsidian icon in the Firefox toolbar and then click the gear to open the settings screen again.
 2. Click _Interpreter_ and enable it.
-3. Click _Add model_ and enter details about the local Ollama server.
-   - _Display name_: `Llama 3.2 (ctx=32k, t=0.25)`
-   - _Base URL_: `http://127.0.0.1:11434/api/chat`
-   - _Model ID_: `llama3.2:ctx32k-t0.25` (the ID used when running `ollama create` earlier)
+3. Click _Add provider_ and enter details about the local Ollama server.
    - _Provider_: `Ollama`
+   - _Base URL_: `http://127.0.0.1:11434/api/chat`
    - _API key_: `ollama`
-4. Drag the new model so that it appears first and disable the other models.
+4. Click _Add model_ and enter details about the local Ollama server.
+   - _Provider_: `Ollama`
+   - _Display name_: `Llama 3.2 (ctx=32k, t=0.25)`
+   - _Model ID_: `llama3.2:ctx32k-t0.25` (the ID used when running `ollama create` earlier)
 
 ## Create a new template
 
