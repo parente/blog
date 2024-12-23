@@ -2,7 +2,7 @@
 date: 2024-11-29
 title: Create Obsidian Web Clip Summaries on MacOS with Firefox and Llama 3.2
 excerpt: I use Obsidian to capture all kinds of information. I set out to get the Obsidian web clipper Firefox extension configured on my Mac with a local Meta Llama 3.2 model to summarize content. This post explains the steps I took top-to-bottom.
-author_comment: I updated this post on December 23, 2024 to reflect the steps required in the version 0.10.5 of the Obsidian web clipper extension.
+author_comment: I updated this post on December 23, 2024 to reflect the steps required in version 0.10.5 of the Obsidian web clipper extension.
 ---
 
 I use [Obsidian](https://obsidian.md) to capture information like my daily todo lists; notes about things I've read, listened to, watched, or done; reminders about repeating chores and home maintenance tasks; trips I'm planning or places I've visited--anything and everything.
