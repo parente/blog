@@ -35,9 +35,10 @@
         <%block name="mainColumn" />
       </article>
 
-      <!-- Meta -->
+      <!-- Page Meta -->
       <%block name="pageMeta" />
 
+      <!-- Site Meta -->
       <div class="row footerSection gx-5" id="siteMeta">
 
         <div class="col-md-3" id="social">
