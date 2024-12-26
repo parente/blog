@@ -80,7 +80,6 @@ iframe {
 }
 
 #siteMeta.row {
-    padding-top: 0;
     margin: 0;
 }
 
@@ -89,14 +88,19 @@ iframe {
 }
 
 #siteMeta h3 {
-    margin-top: 30px;
+    margin-top: 0;
 }
 
-#pageMeta {
-    margin-top: 60px;
+
+#siteMeta i {
+    padding-right: 0.25em;
 }
 
-#pageMeta .excerpt {
+#nextRead h3 {
+    margin-top: 0;
+}
+
+#nextRead .excerpt {
     font-style: italic;
 }
 
@@ -114,8 +118,12 @@ iframe {
     margin: 1em 0px;
 }
 
-#siteMeta i {
-    padding-right: 0.25em;
+#mainColumn {
+    margin-bottom: 60px;
+}
+
+#userComments .utterances {
+    max-width: inherit !important;
 }
 
 .footerSection {
@@ -199,6 +207,9 @@ body .gist {
 
 .commentary {
     font-size: 0.8em;
+    color: #999;
+    line-height: 1.1em;
+    margin-bottom: 30px;
 }
 
 .container{

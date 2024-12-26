@@ -1,6 +1,7 @@
 ---
 title: About
 excerpt: Who do I say / think I am?
+allow_comments: false
 ---
 
 <img alt="Image of Peter Parente" class="inlineRight profilePic" width="140" height="140" src="https://s.gravatar.com/avatar/c7d6948add10f2d0ea4928e4995d6b32?s=128" />

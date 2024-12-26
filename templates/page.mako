@@ -15,14 +15,26 @@
     <p class="pageDate">${page['date'].strftime('%B %d, %Y')}</p>
   % endif
   % if 'author_comment' in page:
-    <p class="commentary"><i class="fa fa-comment-o"></i> ${page['author_comment']}<hr /></p>
+    <p class="commentary"><i class="fa fa-comment-o"></i> ${page['author_comment']}</p>
   % endif
   ${page['html']}
 </%block>
 
 <%block name="pageMeta">
+  % if 'allow_comments' in page:
+  <div class="footerSection" id="userComments">
+    <script src="https://utteranc.es/client.js"
+          repo="parente/blog"
+          issue-term="[${page['slug']}]"
+          label="thread"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+    </script>
+  </div>
+  % endif 
   % if 'next' in page:
-    <div class="footerSection" id="pageMeta">
+    <div class="footerSection" id="nextRead">
         <h3>Another Read: <a href="${site_root}/${page['next']['slug']}">${page['next']['title']} &#187;</a></h3>
         <div class="excerpt">${page['next']['excerpt']}</div>
     </div>
