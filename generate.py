@@ -35,10 +35,13 @@ TMPL_LOOKUP = mako.lookup.TemplateLookup(
 
 
 class Page(TypedDict):
-    """A page on the site."""
+    """A page on the site.
+
+    Reminder: All types are parsed as strings by python-markdown.
+    """
 
     # Allow comments on the page
-    allow_comments: NotRequired[bool]
+    allow_comments: NotRequired[str | bool]
     # Author of the page, if different from SITE_AUTHOR
     author: NotRequired[str]
     # Brief introductory comment above the start of a page *in HTML*
@@ -52,7 +55,7 @@ class Page(TypedDict):
     # The next page in chronological series of pages
     next: "Page"
     # Flag to skip rendering the page
-    skip: NotRequired[bool]
+    skip: NotRequired[str | bool]
     # The URL slug of the page
     slug: str
     # The path containing the source document of the page
@@ -202,6 +205,12 @@ class MarkdownParser:
             page["excerpt"] = self._build_excerpt(text)
         if "allow_comments" not in page:
             page["allow_comments"] = True
+        else:
+            page["allow_comments"] = page["allow_comments"].lower() in (
+                "true",
+                "yes",
+                "1",
+            )
         page["src"] = path
         page["slug"] = self._build_page_slug(page)
         page["html"] = html

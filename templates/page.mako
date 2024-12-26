@@ -21,7 +21,7 @@
 </%block>
 
 <%block name="pageMeta">
-  % if 'allow_comments' in page:
+  % if page['allow_comments']:
   <div class="footerSection" id="userComments">
     <script src="https://utteranc.es/client.js"
           repo="parente/blog"
