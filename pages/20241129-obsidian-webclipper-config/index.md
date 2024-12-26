@@ -66,13 +66,13 @@ PARAMETER temperature 0.25
 1. Click the Obsidian icon in the Firefox toolbar and then click the gear to open the settings screen again.
 2. Click _Interpreter_ and enable it.
 3. Click _Add provider_ and enter details about the local Ollama server.
-   - _Provider_: `Ollama`
-   - _Base URL_: `http://127.0.0.1:11434/api/chat`
-   - _API key_: `ollama`
+    - _Provider_: `Ollama`
+    - _Base URL_: `http://127.0.0.1:11434/api/chat`
+    - _API key_: `ollama`
 4. Click _Add model_ and enter details about the local Ollama server.
-   - _Provider_: `Ollama`
-   - _Display name_: `Llama 3.2 (ctx=32k, t=0.25)`
-   - _Model ID_: `llama3.2:ctx32k-t0.25` (the ID used when running `ollama create` earlier)
+    - _Provider_: `Ollama`
+    - _Display name_: `Llama 3.2 (ctx=32k, t=0.25)`
+    - _Model ID_: `llama3.2:ctx32k-t0.25` (the ID used when running `ollama create` earlier)
 
 ## Create a new template
 
