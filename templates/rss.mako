@@ -13,7 +13,7 @@
     <generator>https://github.com/parente/blog</generator>
     <sy:updatePeriod>daily</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
-    <atom:link href="${site_domain}/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${site_domain}/feed/index.xml" rel="self" type="application/rss+xml" />
 % for page in latest_pages:
     <item>
       <title>${page['title']}</title>
