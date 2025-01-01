@@ -48,44 +48,44 @@ on the screen at once and spot coarse differences.
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
+<div class=" highlight hl-ipython3">
+<pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
 
 <span class="k">def</span> <span class="nf">_src_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot;Base64 encodes image bytes for inclusion in an HTML img element&quot;&quot;&quot;</span>
-<span class="n">img_obj</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">bundle</span> <span class="ow">in</span> <span class="n">img_obj</span><span class="o">.</span><span class="n">\_repr_mimebundle_</span><span class="p">():</span>
-<span class="k">for</span> <span class="n">mimetype</span><span class="p">,</span> <span class="n">b64value</span> <span class="ow">in</span> <span class="n">bundle</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="k">if</span> <span class="n">mimetype</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;image/&#39;</span><span class="p">):</span>
-<span class="k">return</span> <span class="n">f</span><span class="s1">&#39;data:</span><span class="si">{mimetype}</span><span class="s1">;base64,</span><span class="si">{b64value}</span><span class="s1">&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Base64 encodes image bytes for inclusion in an HTML img element&quot;&quot;&quot;</span>
+    <span class="n">img_obj</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">bundle</span> <span class="ow">in</span> <span class="n">img_obj</span><span class="o">.</span><span class="n">\_repr_mimebundle_</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">mimetype</span><span class="p">,</span> <span class="n">b64value</span> <span class="ow">in</span> <span class="n">bundle</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">mimetype</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;image/&#39;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">f</span><span class="s1">&#39;data:</span><span class="si">{mimetype}</span><span class="s1">;base64,</span><span class="si">{b64value}</span><span class="s1">&#39;</span>
 
 <span class="k">def</span> <span class="nf">gallery</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">row_height</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot;Shows a set of images in a gallery that flexes with the width of the notebook.</span>
-<span class="sd"> </span>
-<span class="sd"> Parameters</span>
-<span class="sd"> ----------</span>
-<span class="sd"> images: list of str or bytes</span>
-<span class="sd"> URLs or bytes of images to display</span>
-
-<span class="sd"> row_height: str</span>
-<span class="sd"> CSS height value to assign to all images. Set to &#39;auto&#39; by default to show images</span>
-<span class="sd"> with their native dimensions. Set to a value like &#39;250px&#39; to make all rows</span>
-<span class="sd"> in the gallery equal height.</span>
-<span class="sd"> &quot;&quot;&quot;</span>
-<span class="n">figures</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
-<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="n">src</span> <span class="o">=</span> <span class="n">\_src_from_data</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="n">caption</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="k">else</span><span class="p">:</span>
-<span class="n">src</span> <span class="o">=</span> <span class="n">image</span>
-<span class="n">caption</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;&lt;figcaption style=&quot;font-size: 0.6em&quot;&gt;</span><span class="si">{image}</span><span class="s1">&lt;/figcaption&gt;&#39;</span>
-<span class="n">figures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Shows a set of images in a gallery that flexes with the width of the notebook.</span>
+    <span class="sd"> </span>
+    <span class="sd"> Parameters</span>
+    <span class="sd"> ----------</span>
+    <span class="sd"> images: list of str or bytes</span>
+        <span class="sd"> URLs or bytes of images to display</span>
+    <span class="sd"> row_height: str</span>
+        <span class="sd"> CSS height value to assign to all images. Set to &#39;auto&#39; by default to show images</span>
+        <span class="sd"> with their native dimensions. Set to a value like &#39;250px&#39; to make all rows</span>
+        <span class="sd"> in the gallery equal height.</span>
+    <span class="sd"> &quot;&quot;&quot;</span>
+    <span class="n">figures</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">\_src_from_data</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class="n">caption</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">image</span>
+            <span class="n">caption</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;&lt;figcaption style=&quot;font-size: 0.6em&quot;&gt;</span><span class="si">{image}</span><span class="s1">&lt;/figcaption&gt;&#39;</span>
+        <span class="n">figures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1"> &lt;figure style=&quot;margin: 5px !important;&quot;&gt;</span>
 <span class="s1"> &lt;img src=&quot;</span><span class="si">{src}</span><span class="s1">&quot; style=&quot;height: </span><span class="si">{row_height}</span><span class="s1">&quot;&gt;</span>
 <span class="s1"> </span><span class="si">{caption}</span><span class="s1"></span>
 <span class="s1"> &lt;/figure&gt;</span>
 <span class="s1"> &#39;&#39;&#39;</span><span class="p">)</span>
-<span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1"> &lt;div style=&quot;display: flex; flex-flow: row wrap; text-align: center;&quot;&gt;</span>
 <span class="s1"> {&#39;&#39;.join(figures)}</span>
 <span class="s1"> &lt;/div&gt;</span>
@@ -123,9 +123,9 @@ on the screen at once and spot coarse differences.
 
 <span class="n">urls</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
-<span class="n">width</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
-<span class="n">height</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
-<span class="n">urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;https://picsum.photos/</span><span class="si">{width}</span><span class="s1">/</span><span class="si">{height}</span><span class="s1">?random=</span><span class="si">{i}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
+    <span class="n">urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;https://picsum.photos/</span><span class="si">{width}</span><span class="s1">/</span><span class="si">{height}</span><span class="s1">?random=</span><span class="si">{i}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 </pre></div>
 
@@ -320,9 +320,9 @@ on the screen at once and spot coarse differences.
 
 <span class="n">pngs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
-<span class="n">buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
-<span class="n">pagan</span><span class="o">.</span><span class="n">Avatar</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{i}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
-<span class="n">pngs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+    <span class="n">buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+    <span class="n">pagan</span><span class="o">.</span><span class="n">Avatar</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{i}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
+    <span class="n">pngs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
 
 </pre></div>
 
