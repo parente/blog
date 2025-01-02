@@ -2,10 +2,6 @@
     --bs-code-color: #338866;
 }
 
-a:target {
-    background-color: #edfff8;
-}
-
 body {
     font-family: "Gentium Basic", serif;
     font-size: 1.25em;
@@ -147,6 +143,10 @@ iframe {
 .footnote li > p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.footnote li:target {
+    background-color: #edfff8;
 }
 
 body .gist {
