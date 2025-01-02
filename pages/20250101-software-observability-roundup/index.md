@@ -179,7 +179,7 @@ should head. Shared terminology and goals are works in progress.
 
 [^parker2024]:
     Parker, A. (2024, March 29). [Re-Redefining
-    Observability](https://aparker.io/2024/03/re-redefining-observability/). _Austin Parker's Blog_.
+    Observability](https://www.aparker.io/post/3leq2g72z7r2t). _Austin Parker's Blog_.
 
 [^majors2024aug]:
     Majors, C. (2024, August 7). [Is It Time To Version Observability? (Signs Point To
