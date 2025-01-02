@@ -1,7 +1,11 @@
 :root {
     --bs-code-color: #338866;
-  }
-  
+}
+
+a:target {
+    background-color: #edfff8;
+}
+
 body {
     font-family: "Gentium Basic", serif;
     font-size: 1.25em;
@@ -109,12 +113,12 @@ iframe {
     font-size: 0.7em;
 }
 
-#mainColumn p {
+.mainColumn p {
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-#mainColumn ul, #mainColumn ol {
+.mainColumn ul, .mainColumn ol {
     margin: 1em 0px;
 }
 
@@ -133,7 +137,16 @@ iframe {
 }
 
 .footnote {
-    font-size: 0.7em;
+    font-size: 0.9em;
+}
+
+.footnote hr {
+    display: none;
+}
+
+.footnote li > p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 body .gist {

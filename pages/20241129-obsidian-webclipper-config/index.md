@@ -138,6 +138,8 @@ I was able to visit one of the [Amazon Bedrock documentation pages](https://docs
 - There are a lot of knobs to turn here, from model parameters to prompt variables to note formats to template configs. Tuning and tweaking is in order.
 - The OpenAI and Anthropic models would likely provide better results out of the gate. I'm sticking with Ollama/Llama in the spirit of the local-only Obsidian privacy model.
 
+---
+
 [^1]: I'm maintaining my latest Obsidian configs in [parente/obsidian-configs on GitHub](https://github.com/parente/obsidian-configs).
 [^2]: I did spend a few moments considering if I should set this env var less globally and narrow down the extension UUID(s) allowed. I did not think it worth the effort in my case. Follow your heart.
 [^3]: Restart the Ollama app from the macOS menu bar if you're already running it so that the `launchctl setenv` takes effect. Otherwise, the ollama server will respond with auth errors when the extension attempts to use it.

@@ -31,7 +31,7 @@
       </header>
 
       <!-- Main Body -->
-      <article id="mainColumn">
+      <article id="mainColumn" class="mainColumn">
         <%block name="mainColumn" />
       </article>
 
