@@ -88,16 +88,15 @@ iframe {
 }
 
 #siteMeta h3 {
-    margin-top: 0;
+    margin-top: 30px;
 }
-
 
 #siteMeta i {
     padding-right: 0.25em;
 }
 
 #nextRead h3 {
-    margin-top: 0;
+    margin-top: 30px;
 }
 
 #nextRead .excerpt {
@@ -122,14 +121,18 @@ iframe {
     margin-bottom: 60px;
 }
 
+#userComments {
+    padding: 30px 0;
+}
+
 #userComments .utterances {
     max-width: inherit !important;
 }
 
 .footerSection {
     font-size: 0.9em;
-    padding: 30px 0px;
     border-top: 1px solid #ddd;
+    padding-bottom: 30px;
 }
 
 .footnote {
