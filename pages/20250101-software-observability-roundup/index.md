@@ -118,8 +118,8 @@ should head. Shared terminology and goals are works in progress.
         at correlating and summarizing[^burmistrov2024], perhaps continually in the
         background.[^tane2024dec]
 
--   Adopt exploratory tooling that lets you explore quickly and cheaply query that data about
-    emergent behaviors, new questions, unknown unknowns.
+-   Adopt tooling that lets you explore quickly and cheaply--to discover emergent behaviors, answer
+    new questions, prepare for unknown unknowns.
 
     -   Proper tooling allows engineers to investigate any system, regardless of their experience
         with it or its complexity, in a methodical and objective manner.[^majors2022]
