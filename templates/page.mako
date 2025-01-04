@@ -23,14 +23,7 @@
 <%block name="pageMeta">
   % if page['allow_comments']:
   <div class="footerSection" id="userComments">
-    <script src="https://utteranc.es/client.js"
-          repo="parente/blog"
-          issue-term="[${page['slug']}]"
-          label="thread"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-    </script>
+    <script src="${site_root}/static/js/comments.js" async></script>
   </div>
   % endif 
   % if 'next' in page:

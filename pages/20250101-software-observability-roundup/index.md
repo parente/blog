@@ -118,8 +118,8 @@ should head. Shared terminology and goals are works in progress.
         at correlating and summarizing[^burmistrov2024], perhaps continually in the
         background.[^tane2024dec]
 
--   Adopt tooling that lets you explore quickly and cheaply--to discover emergent behaviors, answer
-    new questions, prepare for unknown unknowns.
+-   Adopt tooling that lets you explore quickly and cheaply&mdash;to discover emergent behaviors,
+    answer new questions, prepare for unknown unknowns.
 
     -   Proper tooling allows engineers to investigate any system, regardless of their experience
         with it or its complexity, in a methodical and objective manner.[^majors2022]
@@ -128,7 +128,7 @@ should head. Shared terminology and goals are works in progress.
     -   You will never ask the same question twice. Something is different since you last asked
         it.[^weakly2024mar]
     -   There is a natural tension between a system’s scalability and its feature set. You can
-        afford much powerful observability features at scales orders of magnitude smaller than
+        afford more powerful observability features at scales orders of magnitude smaller than
         Google.[^sigelman2021a]
 
 # Looking Forward

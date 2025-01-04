@@ -1,3 +1,4 @@
+/* Light mode theme default */
 :root {
     --bs-code-color: #338866;
 }
@@ -228,7 +229,7 @@ body .gist {
     margin-bottom: 30px;
 }
 
-.container{
+.container {
     max-width:980px !important;
 }
 
@@ -236,4 +237,55 @@ img {
     max-width: 100%;
     height: auto;
     border: 1px solid #ccc;
+}
+
+/* Dark mode theme alternative */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1d1b;
+        color: #e0e0e0;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        color: #e0e0e0;
+    }
+
+    a, a:visited, a:hover {
+        color: #6ba5bf;
+    }
+
+    .archiveList .yearBreak .year {
+        color: #e0e0e0;
+    }
+
+    pre {
+        background-color: #2a2e2c;
+        border-color: #444;
+    }
+
+    .footerSection {
+        border-color: #444;
+    }
+
+    .footnote li:target {
+        background-color: #2d4d41;
+    }
+
+    img, .profilePic, .bordered {
+        border-color: #444;
+    }
+
+    .pageTitle {
+        border-color: #444;
+        color: #5fcfa3;
+    }
+
+    .pageDate, .archiveList .date, .commentary {
+        color: #888;
+    }
+
+    .embedFilename {
+        color: #5fcfa3;
+        border-color: #444;
+    }
 }

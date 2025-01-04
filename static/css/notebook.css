@@ -1,3 +1,4 @@
+/* Light mode theme default */
 .anchor-link {
     display: none;
 }
@@ -64,4 +65,25 @@
 
 .output_html {
     overflow-x: auto;
+}
+
+/* Dark mode theme alternative */
+@media (prefers-color-scheme: dark) {
+    .input_prompt {
+        color: #7f9fff;
+    }
+
+    .output_prompt {
+        color: #ff7f7f;
+    }
+
+    .input_area pre {
+        background-color: #2a2e2c;
+    }
+
+    .output_subarea td,
+    .output_subarea th,
+    .output_subarea table {
+        border-color: #444;
+    }
 }

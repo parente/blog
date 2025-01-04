@@ -1,3 +1,4 @@
+/* Light mode theme default */
 .hll { background-color: #ffffcc }
 .c { color: #408080; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
@@ -59,3 +60,50 @@
 .vg { color: #19177C } /* Name.Variable.Global */
 .vi { color: #19177C } /* Name.Variable.Instance */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/* Dark mode theme alternative */
+@media (prefers-color-scheme: dark) {
+    .hll { background-color: #3f3f2c }
+    .c { color: #8ec2c2; font-style: italic }
+    .err { border: 1px solid #ff5555 }
+    .k { color: #7fbf7f; font-weight: bold }
+    .o { color: #999999 }
+    .cm, .cp, .c1, .cs { color: #8ec2c2; font-style: italic }
+    .gd { color: #ff7f7f }
+    .gh { color: #7f9fff; font-weight: bold }
+    .gi { color: #7fbf7f }
+    .go { color: #888888 }
+    .gp { color: #7f9fff; font-weight: bold }
+    .gu { color: #bf7fbf; font-weight: bold }
+    .gt { color: #7f9fff }
+    .kc, .kd, .kn, .kr { color: #7fbf7f; font-weight: bold }
+    .kp { color: #7fbf7f }
+    .kt { color: #ff7f9f }
+    .m { color: #999999 }
+    .s { color: #ff9f9f }
+    .na { color: #bfbf7f }
+    .nb { color: #7fbf7f }
+    .nc { color: #7f9fff; font-weight: bold }
+    .no { color: #ff9f9f }
+    .nd { color: #bf7fff }
+    .ni { color: #cfcfcf; font-weight: bold }
+    .ne { color: #ff7f7f; font-weight: bold }
+    .nf { color: #7f9fff }
+    .nl { color: #bfbf7f }
+    .nn { color: #7f9fff; font-weight: bold }
+    .nt { color: #7fbf7f; font-weight: bold }
+    .nv { color: #9f9fff }
+    .w { color: #666666 }
+    .mf, .mh, .mi, .mo { color: #999999 }
+    .sb, .sc, .sd, .s2 { color: #ff9f9f }
+    .se { color: #ffaf7f; font-weight: bold }
+    .sh { color: #ff9f9f }
+    .si { color: #ff9fbf; font-weight: bold }
+    .sx { color: #7fbf7f }
+    .sr { color: #ff9fbf }
+    .s1 { color: #ff9f9f }
+    .ss { color: #9f9fff }
+    .bp { color: #7fbf7f }
+    .vc, .vg, .vi { color: #9f9fff }
+    .il { color: #999999 }
+}
