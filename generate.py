@@ -195,7 +195,7 @@ class MarkdownParser:
         html = self.md.convert(text)
         meta = self.md.Meta
         for key, value in meta.items():
-            meta[key] = "".join(value)
+            meta[key] = " ".join(value)
         page.update(meta)
 
         # Populate fields expected by the templates
