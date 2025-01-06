@@ -123,7 +123,7 @@ should head. Shared terminology and goals are works in progress.
 
     -   Proper tooling allows engineers to investigate any system, regardless of their experience
         with it or its complexity, in a methodical and objective manner.[^majors2022]
-    -   The waterfall view of traces, root spans, nested spans, and the like _is_ not sufficient.
+    -   The waterfall view of traces, root spans, nested spans, and the like is _not_ sufficient.
         Users need the ability to "dig" into data however they deem necessary.[^burmistrov2024]
     -   You will never ask the same question twice. Something is different since you last asked
         it.[^weakly2024mar]
