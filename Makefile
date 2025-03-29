@@ -16,13 +16,14 @@ clean: ## Make a clean workspace
 	@git clean -f .
 
 check: ## Make a ruff check of code lint
-	@ruff check generate.py
+	@uv run ruff check generate.py
 
 env: ## Make the current python environment install all prereqs
-	@pip install -r requirements.txt -r requirements-dev.txt
+	@uv venv
+	@uv pip install -r requirements.txt -r requirements-dev.txt
 
 build: ## Make a local copy of the blog
-	python generate.py
+	@uv run python generate.py
 
 server: ## Make a local web server point to the latest local build
 	@open http://localhost:8000/_output && python -m http.server
