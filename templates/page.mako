@@ -17,7 +17,9 @@
   % if 'author_comment' in page:
     <p class="commentary"><i class="fa fa-comment-o"></i> ${page['author_comment']}</p>
   % endif
-  ${page['html']}
+  <div class="pageContent">
+    ${page['html']}
+  </div>
 </%block>
 
 <%block name="pageMeta">

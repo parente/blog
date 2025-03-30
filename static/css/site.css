@@ -4,13 +4,14 @@
 }
 
 body {
-    font-family: "Gentium Basic", serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 1.25em;
+    font-weight: 350;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: normal;
-    font-family: "Dosis", sans-serif;
+    font-weight: 300;
+    font-family: "Noto Sans", sans-serif;
     color: #222;
     margin-top: 1.25em;
 }
@@ -109,9 +110,13 @@ iframe {
     font-size: 0.7em;
 }
 
+.mainColumn .pageContent {
+    line-height: 1.8em;
+}
+
 .mainColumn p {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
 }
 
 .mainColumn ul, .mainColumn ol {
@@ -225,7 +230,7 @@ body .gist {
 .commentary {
     font-size: 0.8em;
     color: #999;
-    line-height: 1.1em;
+    line-height: 1.5em;
     margin-bottom: 30px;
 }
 
