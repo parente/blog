@@ -19,11 +19,11 @@ understanding in brief.
 ---
 
 -   Many LLMs support _function calling_ also known as _tool use_ (e.g., [OpenAI](https://platform.openai.com/docs/guides/function-calling), [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview), [Llama](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/#code-interpreter)).
--   There's no standard format for function call / tool use instructions across models vendors. Tool
+-   There's no standard format for function call / tool use instructions across model vendors. Tool
     request and response formats vary.
 -   MCP "... provides a standardized framework for managing the execution of function call instructions,
     including tool discovery, invocation, and response handling"[^chan2024dec]
--   [MCP servers](https://modelcontextprotocol.io/examples) host tools discovery and execution.
+-   [MCP servers](https://modelcontextprotocol.io/examples) host tools for discovery and execution.
 -   [MCP clients](https://modelcontextprotocol.io/clients) bridge user interaction with LLMs, and
     LLM interactions with tools on MCP servers. For example:
     -   User: "What's the weather?"
