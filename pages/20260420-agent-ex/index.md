@@ -18,11 +18,13 @@ to make exploration a bit easier.
 ![Screenshot of the Agent-Ex web app](./agent-ex-web-app.png)
 
 I wondered how I might keep the info in this web app up-to-date over time. So I worked with Kiro
-again to [plan](https://github.com/parente/agent-ex/blob/main/docs/003-kiro-research-update-process-plan.md) and build a
-[skill](https://github.com/parente/agent-ex/blob/main/.kiro/skills/update-vendor-data/SKILL.md)
-for crawling vendor docs and workflow for [proposing
-updates](https://github.com/parente/agent-ex/blob/main/.github/workflows/update-vendor-data.yml)
-twice a month.
+again to
+[plan](https://github.com/parente/agent-ex/blob/main/docs/003-kiro-research-update-process-plan.md)
+and build a
+[skill](https://github.com/parente/agent-ex/blob/main/.kiro/skills/update-vendor-data/SKILL.md) for
+crawling vendor docs and a scheduled
+[workflow](https://github.com/parente/agent-ex/blob/main/.github/workflows/update-vendor-data.yml)
+for proposing updates.
 
 I don't know if this little experiment will maintain something useful or turn to gibberish. I'm
 genuinely interested in finding out. 🍿
