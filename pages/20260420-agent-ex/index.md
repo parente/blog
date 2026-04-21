@@ -16,8 +16,8 @@ pretty dense. So I worked with Kiro to
 to make exploration a bit easier.
 
 I wondered how I might keep the info in this web app up-to-date over time. So I worked with Kiro
-again to [plan]() and build a
-[skill](https://github.com/parente/agent-ex/blob/main/docs/003-kiro-research-update-process-plan.md)
+again to [plan](https://github.com/parente/agent-ex/blob/main/docs/003-kiro-research-update-process-plan.md) and build a
+[skill](https://github.com/parente/agent-ex/blob/main/.kiro/skills/update-vendor-data/SKILL.md)
 for crawling vendor docs and workflow for [proposing
 updates](https://github.com/parente/agent-ex/blob/main/.github/workflows/update-vendor-data.yml)
 twice a month.
