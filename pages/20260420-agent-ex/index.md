@@ -24,5 +24,5 @@ for crawling vendor docs and workflow for [proposing
 updates](https://github.com/parente/agent-ex/blob/main/.github/workflows/update-vendor-data.yml)
 twice a month.
 
-I don't know if this little experiment will maintain something useful or turn it to gibberish. I'm
+I don't know if this little experiment will maintain something useful or turn to gibberish. I'm
 genuinely interested in finding out. 🍿
